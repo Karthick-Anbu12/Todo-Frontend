@@ -23,7 +23,7 @@ function Addtolist() {
       return error
     },
     onSubmit: async (values) => {
-      await axios.post("http://localhost:3000/addtolist", values, {
+      await axios.post("https://todo-backend-k762.onrender.com/addtolist", values, {
         headers: {
           Authorization: window.localStorage.getItem("mytoken")
         }

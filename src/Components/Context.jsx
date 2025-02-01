@@ -8,7 +8,7 @@ export const UserProvider = ({ children }) => {
   const [list, setlist] = useState([])
   const [completed,setcompleted]=useState([])
   const getdata = async () => {
-    const value = await axios.get("http://localhost:3000/userdata", {
+    const value = await axios.get("https://todo-backend-k762.onrender.com/userdata", {
       headers: {
         Authorization: window.localStorage.getItem("mytoken")
       }
@@ -21,7 +21,7 @@ export const UserProvider = ({ children }) => {
     list.splice(index, 1)
     setlist([...list])
     try {
-      await axios.post("http://localhost:3000/removefromlist", list, {
+      await axios.post("https://todo-backend-k762.onrender.com/removefromlist", list, {
         headers: {
           Authorization: window.localStorage.getItem("mytoken")
         }
@@ -34,10 +34,10 @@ export const UserProvider = ({ children }) => {
   const movetocomplete = async (index) => {
     let value = list[index]
     try {
-      await axios.post("http://localhost:3000/movetocomplete", value, { headers: { Authorization: window.localStorage.getItem("mytoken") } })
+      await axios.post("https://todo-backend-k762.onrender.com/movetocomplete", value, { headers: { Authorization: window.localStorage.getItem("mytoken") } })
       list.splice(index, 1)
       setlist([...list])
-      await axios.post("http://localhost:3000/removefromlist", list, {
+      await axios.post("https://todo-backend-k762.onrender.com/removefromlist", list, {
         headers: {
           Authorization: window.localStorage.getItem("mytoken")
         }
