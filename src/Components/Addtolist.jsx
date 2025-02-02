@@ -5,7 +5,7 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 import { useNavigate } from 'react-router-dom'
 import context from './Context';
 function Addtolist() {
-  const { getdata } = useContext(context)
+  const { getdata,isLoggedIn} = useContext(context)
   const navigation = useNavigate()
   const formik = useFormik({
     initialValues: {
@@ -23,6 +23,9 @@ function Addtolist() {
       return error
     },
     onSubmit: async (values) => {
+      if(!isLoggedIn){
+        alert("Login or Signin to Add Todos")
+      }
       await axios.post("https://todo-backend-k762.onrender.com/addtolist", values, {
         headers: {
           Authorization: window.localStorage.getItem("mytoken")

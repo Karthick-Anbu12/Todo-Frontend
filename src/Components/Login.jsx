@@ -37,7 +37,6 @@ function Login() {
       catch{
         alert("Invalid Credentials")
       }
-      console.log(values)
     }
   }
 )
