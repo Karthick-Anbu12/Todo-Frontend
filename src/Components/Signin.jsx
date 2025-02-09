@@ -6,7 +6,7 @@ import axios from 'axios'
 
 function Signin() {
     const adduser=async(data)=>{
-        await axios.post("https://todo-backend-k762.onrender.com/adduser",data)
+        await axios.post("https://todo-backend-7vfo.onrender.com/adduser",data)
         }
     const navigate = useNavigate()
     const formik = useFormik({

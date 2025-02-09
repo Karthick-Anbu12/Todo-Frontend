@@ -26,7 +26,7 @@ function Addtolist() {
       if(!isLoggedIn){
         alert("Login or Signin to Add Todos")
       }
-      await axios.post("https://todo-backend-k762.onrender.com/addtolist", values, {
+      await axios.post("https://todo-backend-7vfo.onrender.com/addtolist", values, {
         headers: {
           Authorization: window.localStorage.getItem("mytoken")
         }
